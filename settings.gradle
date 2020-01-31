@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='Basics-of-Web-and-Mobile-Application-Development-Project---Android-part'

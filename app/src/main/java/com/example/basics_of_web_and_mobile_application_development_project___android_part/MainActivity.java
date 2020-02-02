@@ -1,25 +1,31 @@
 package com.example.basics_of_web_and_mobile_application_development_project___android_part;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static TextView tv1;
-    Button btn1;
+    private RecyclerView rv;
+    static rvAdapter rva;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tv1 = (TextView) findViewById(R.id.tv1);
-        btn1 = (Button) findViewById(R.id.btn1);
+        setupRecycler();
+        //setupRecyclerData();
 
+        FetchData process = new FetchData();
+        process.execute();
+
+        /*
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,14 +33,26 @@ public class MainActivity extends AppCompatActivity {
                 process.execute();
             }
         });
+        */
+
 
     }
 
+    private void setupRecycler()
+    {
+        rv = findViewById(R.id.rv);
+        rv.setLayoutManager(new LinearLayoutManager(this));
+        rva = new rvAdapter();
+        rv.setAdapter(rva);
+    }
+    private void setupRecyclerData()
+    {
+
+        List<Article> data = new ArrayList<>();
+        Article article = new Article("","","","","","");
+        data.add(article);
 
 
-
-        //String url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=0f2a5abc1ac1464fafb1ba014d50e0ea";
-
-
-
+        rva.addData(data);
+    }
 }

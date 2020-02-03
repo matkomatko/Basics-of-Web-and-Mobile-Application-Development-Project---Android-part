@@ -7,42 +7,59 @@
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
     android:gravity="center_vertical"
-    android:background="@color/colorAccent"
+    android:background="@drawable/rectangle_border"
     android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:onClick="customOnClick"
+
     >
 
 
 
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvauthor"
-        tools:text = "TextView"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvtitle"
-        tools:text = "TextView"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvdescription"
-        tools:text = "TextView"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvurl"
-        tools:text = "TextView"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvurlToImage"
-        tools:text = "TextView"/>
+        tools:text = "tvauthor"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvpublishedAt"
-        tools:text = "TextView"/>
+        tools:text = "tvpublishedAt"/>-->
+    <TextView
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvtitle"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        tools:text = "tvtitle"/>
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+
+        />
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvurlToImage"
+        tools:text = "tvurlToImage"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvdescription"
+        tools:text = "tvdescription"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvurl"
+        tools:text = "tvurl"/>-->
+
+
 
 
 </LinearLayout>

@@ -24,7 +24,7 @@ public class FetchData extends AsyncTask<Void,Void,Void> {
     String tv1 = "";
     String ParsedData = "";
     List<Article> data = new ArrayList<>();
-    int articleCount = 2;
+    int articleCount = 20;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -43,18 +43,30 @@ public class FetchData extends AsyncTask<Void,Void,Void> {
             JSONObject JO = new JSONObject(tv1);
             JSONArray JA = JO.getJSONArray("articles");
 
-            for ( int i = 0; i < JA.length(); i++)
+            for (int i = 0; i < JA.length(); i++)
             {
                 JSONObject tempJO = JA.getJSONObject(i);
 
                 Article tempArticle = new Article("","","","","","");
-                //problems with getting null - have to fix that
-                tempArticle.setAuthor((String) tempJO.get("author"));
-                tempArticle.setTitle((String) tempJO.get("title"));
-                tempArticle.setDescription((String) tempJO.get("description"));
-                tempArticle.setUrl((String) tempJO.get("url"));
-                tempArticle.setUrlToImage((String) tempJO.get("urlToImage"));
-                tempArticle.setPublishedAt((String) tempJO.get("publishedAt"));
+
+                if(tempJO.isNull("author")  || tempJO.get("author") == "")tempArticle.setAuthor("Author: Unknown");
+                else tempArticle.setAuthor("Author: " + (String) tempJO.get("author"));
+
+                if(tempJO.isNull("title")  || tempJO.get("title") == "")tempArticle.setTitle("Unknown");
+                else tempArticle.setTitle((String) tempJO.get("title"));
+
+                if(tempJO.isNull("description")  || tempJO.get("description") == "")tempArticle.setDescription("Unknown");
+                else tempArticle.setDescription((String) tempJO.get("description"));
+
+                if(tempJO.isNull("url")  || tempJO.get("url") == "")tempArticle.setUrl("You can read more here Unknown");
+                else tempArticle.setUrl("You can read more here " + (String) tempJO.get("url"));
+
+                if(tempJO.isNull("urlToImage")  || tempJO.get("urlToImage") == "")tempArticle.setUrlToImage("Unknown");
+                else tempArticle.setUrlToImage((String) tempJO.get("urlToImage"));
+
+                if(tempJO.isNull("publishedAt")  || tempJO.get("publishedAt") == "")tempArticle.setPublishedAt("Published at: Unknown");
+                else tempArticle.setPublishedAt("Published at: " + ((String) tempJO.get("publishedAt")).replace('T',' ').replace('Z',' '));
+
 
 
                 data.add(tempArticle);

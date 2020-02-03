@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+
+    tools:context=".DetailedView">
+
+    <TextView
+        android:id="@+id/tvauthorDV"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="TESTETSTEST"
+        />
+    <TextView
+        android:id="@+id/tvpublishedAtDV"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="TESTETSTEST"
+        android:layout_below="@id/tvauthorDV"
+        />
+    <TextView
+        android:id="@+id/tvtitleDV"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="TESTETSTEST"
+        android:layout_below="@id/tvpublishedAtDV"
+        />
+    <ImageView
+        android:id="@+id/ivDV"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_below="@id/tvtitleDV"
+        />
+    <TextView
+        android:id="@+id/tvdescriptionDV"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="TESTETSTEST"
+        android:layout_below="@id/ivDV"
+        />
+    <TextView
+        android:id="@+id/tvurlDV"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="TESTETSTEST"
+        android:layout_below="@id/tvdescriptionDV"
+        />
+
+
+</RelativeLayout>

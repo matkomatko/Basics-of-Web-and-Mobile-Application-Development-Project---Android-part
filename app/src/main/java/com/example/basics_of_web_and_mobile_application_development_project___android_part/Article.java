@@ -8,7 +8,6 @@ public class Article {
     private String urlToImage;
     private String publishedAt;
 
-
     public Article() {
     }
 
@@ -20,7 +19,6 @@ public class Article {
         this.urlToImage = urlToImage;
         this.publishedAt = publishedAt;
     }
-
 
     public String getAuthor() {
         return author;

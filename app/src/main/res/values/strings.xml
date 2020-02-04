@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Croatian News</string>
+    <string name="ImageViewContentDescription">This is an image relevant to the article.</string>
 
 </resources>

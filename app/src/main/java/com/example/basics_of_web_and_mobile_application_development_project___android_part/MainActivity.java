@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void customOnClick(View view){
 
-
         Intent i = new Intent(MainActivity.this, DetailedView.class);
         i.putExtra("tvauthorDV", ((Article)view.getTag()).getAuthor() );
         i.putExtra("tvtitleDV", ((Article)view.getTag()).getTitle() );
@@ -53,11 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupRecyclerData()
     {
-
         List<Article> data = new ArrayList<>();
         Article article = new Article("","","","","","");
         data.add(article);
-
 
         rva.addData(data);
     }

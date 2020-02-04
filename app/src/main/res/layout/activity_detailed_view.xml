@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-
+    android:padding="20dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/rectangle_border"
     tools:context=".DetailedView">
 
     <TextView
         android:id="@+id/tvauthorDV"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="TESTETSTEST"
+        android:textSize="12sp"
         />
     <TextView
         android:id="@+id/tvpublishedAtDV"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="TESTETSTEST"
         android:layout_below="@id/tvauthorDV"
+        android:textSize="12sp"
         />
     <TextView
         android:id="@+id/tvtitleDV"
+        android:textStyle="bold"
+        android:textSize="15sp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="TESTETSTEST"
         android:layout_below="@id/tvpublishedAtDV"
         />
     <ImageView
@@ -34,21 +35,22 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_below="@id/tvtitleDV"
+        android:contentDescription="@string/ImageViewContentDescription"
         />
     <TextView
         android:id="@+id/tvdescriptionDV"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="TESTETSTEST"
         android:layout_below="@id/ivDV"
         />
     <TextView
         android:id="@+id/tvurlDV"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="TESTETSTEST"
         android:layout_below="@id/tvdescriptionDV"
+        android:autoLink="web"
         />
+
 
 
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.basics_of_web_and_mobile_application_development_project___a
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,5 +39,15 @@ public class DetailedView extends AppCompatActivity {
         Picasso.get().load(intent.getStringExtra("tvurlToImageDV")).into(ivDV);
         tvdescriptionDV.setText(intent.getStringExtra("tvdescriptionDV"));
         tvurlDV.setText(intent.getStringExtra("tvurlDV"));
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivityForResult(i, 0);
+        return true;
+    }
+
 }
